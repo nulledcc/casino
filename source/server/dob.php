@@ -1,18 +1,18 @@
 <?php
 if($folderRoot != "isMain"){header("location:../index.php");}
 
-//константы для конфигурации
+//databse constants
 define("DBHOST","localhost");
 define("DBUSER","root");
 define("DBPASS","");
 define("DABASE","curok");
 
-//класс mysqli
+//connect to databse with mysqli
 $mysqli = new mysqli(DBHOST,DBUSER,DBPASS,DABASE);
 
-//если подключение невозможно выводим ошибку
+//if any error die
 if($mysqli->connect_error)
 {
-    die("ОШИБКА ПОДКЛЮЧЕНИЯ:".$mysqli->connect_error);
+    die("MySQLi ERROR: ".$mysqli->connect_error);
 }
 ?>

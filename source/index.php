@@ -1,30 +1,28 @@
 <?php
 session_start();
-header('Content-Type: text/html; charset=windows-1251');
-$folderRoot = "isMain";//переменная для секьюрити файлов
+//header('Content-Type: text/html; charset=windows-1251');//for russian uncoment this
+$folderRoot = "isMain";//check if root
 
 include("server/initCall.php");
 include("server/dob.php");
-//////////устанавливаем конфигурацию шаблона\\\\\\\\\\
-/*//////////////////////////////////////////
-//чтобы изменить строки в буфере //
-//мы должны использовать массив //
-//$readData["example"] = "this";      //
-//и создать строку отвечающий    //
-//за этот массив                         //
-//"-:example:-"                            //
-//чтобы изменить его                 //
-////////////////////////////////////////*/
+//////////set configuration\\\\\\\\\\
+/*///////////////////////////////////
+//to set manual configuration type //
+//$readData["example"] = "this";   //
+//and you must put in template 	   //
+//"-:example:-"			   //
+//to replace it.		   //
+///////////////////////////////////*/
 
 
 
 
 
-//пример установки
-$readData["example"] = "это была строка -:example:- и была изменена текстовым содержанием.";
+//example for template data
+$readData["example"] = "This was -:example:- and been replaced with this text.";
 
 
-    //конфигурация
+    //meta
     $readData["charset"]        = "utf-8";
     $readData["description"]    = "The best casino i have...";
     $readData["keywords"]      = "casino,kazino,cosino,play games,casino games, free casino";
@@ -35,27 +33,27 @@ $readData["example"] = "это была строка -:example:- и была изменена текстовым со
     $readData["title"]  = "best casino";//if you like to set your own configuration comment this line
     
 	//login
-	$readData["wrongL"] = "Неверное имя пользователя или пароль";
-	$readData["lText"]  = "ЛОГИН";
-	$readData["pText"]  = "ПАРОЛЬ";
-	$readData["inText"]  = "ВОЙТИ";
-	$readData["exiText"]  = "ВЫХОД";
-	$readData["hiText"]  = "Привет";
+	$readData["wrongL"] = "Wrong username or password";
+	$readData["lText"]  = "Username";
+	$readData["pText"]  = "Password";
+	$readData["inText"]  = "login";
+	$readData["exiText"]  = "Quit";
+	$readData["hiText"]  = "Hello";
 	
 	//registration
-	$readData["wrongR"] = "Неправильно введены данные";
-	$readData["rlText"]  = "ЛОГИН";
-	$readData["rpText"]  = "ПАРОЛЬ";
-	$readData["rprText"]  = "ПОВТОРИТЕ ПАРОЛЬ";
-	$readData["reginText"]  = "Регистрироватся";
-	$readData["rmText"]  = "ЕЛ. ПОЧТА";
-	$readData["regiText"]  = "Регистрация";
+	$readData["wrongR"] = "Inccorect infromation provided";
+	$readData["rlText"]  = "Username";
+	$readData["rpText"]  = "Password";
+	$readData["rprText"]  = "Repeat Password";
+	$readData["reginText"]  = "Register";
+	$readData["rmText"]  = "E-Mail";
+	$readData["regiText"]  = "Registration";
 	
 
-//запускаем буфер
+//starting buffer
 ob_start("callback");
 
-//подключаем файлы страницы
+//inlude page files
 include("includes/header.php");
 include("includes/meta.php");
 include("includes/link.php");

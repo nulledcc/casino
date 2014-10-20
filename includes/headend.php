@@ -1,0 +1,1 @@
+<?php if($folderRoot != "isMain"){header("location:../index.php");}?></head>

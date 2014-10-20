@@ -1,0 +1,1 @@
+<?php if($folderRoot != "isMain"){header("location:../index.php");}?><link rel="shortcut icon" href="-:shortcuticon:-" /><link rel="stylesheet" type="text/css" href="template/main.css"><title>-:title:-</title>
